@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, ImageBackground, StatusBar, Alert } from 'react-native';
+import { db } from '../config/FirebaseConf';
 
 export default function Registrar() {
 
@@ -20,6 +21,7 @@ export default function Registrar() {
             correo: correo,
             contrasena: contrasena,
           });
+          console.log(nombre,correo,contrasena)
           Alert.alert('Éxito', 'Usuario registrado correctamente');
         } catch (error) {
           Alert.alert('Error', 'Hubo un problema al registrar el usuario');
