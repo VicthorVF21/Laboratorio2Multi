@@ -1,8 +1,8 @@
 import React from 'react';
-import { StyleSheet, Text,Image, View, TextInput, TouchableOpacity, ImageBackground } from 'react-native';
+import { StyleSheet, Text,Image, View, TouchableOpacity, ImageBackground } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-export default function Login() {
+export default function Inicio() {
 
     const nav = useNavigation();
 
@@ -15,29 +15,15 @@ export default function Login() {
         <View style={styles.logoContainer}>
         <Image style={styles.LogoFruit} source={require('../assets/logo_fruit.png')}/>
         </View>
-        <TextInput
-          style={styles.input}
-          placeholder="correo electrónico"
-          placeholderTextColor="#837B7B"
-        />
-        <TextInput
-          style={styles.input}
-          placeholder="contraseña"
-          placeholderTextColor="#837B7B"
-          secureTextEntry
-        />
-        <TouchableOpacity style={styles.button} onPress={() => nav.navigate('Inicio')}>
-          <Text style={styles.buttonText}>Ingresar</Text>
+        <TouchableOpacity style={styles.button} onPress={() => nav.navigate('RProduct')}>
+          <Text style={styles.buttonText}>Registrar Producto</Text>
         </TouchableOpacity>
-        <View style={styles.footer}>
-           <View style={styles.footerRegis}>
-          <Text style={styles.footerText}>Crear Cuenta nueva</Text>
-          <TouchableOpacity onPress={() => nav.navigate('Registrar')}>
-            <Text style={styles.footerText}> Regístrate</Text>
-            </TouchableOpacity>
-          </View> 
-          <Text style={styles.footerText}>Olvidó contraseña?</Text>
-        </View>
+         <TouchableOpacity style={styles.button} onPress={() => nav.navigate('LProduct')}>
+          <Text style={styles.buttonText}>Listar Producto</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button} onPress={() => nav.navigate('AprenderMas')}>
+          <Text style={styles.buttonText}>Aprender+ </Text>
+        </TouchableOpacity>
       </ImageBackground>
     </View>
   );
@@ -63,31 +49,19 @@ const styles = StyleSheet.create({
   },
   LogoFruit: {
     position: 'absolute',
-    bottom: 98,
+    bottom: 65,
     left: 0,
     height: 200,
     width: 200,
   },
-
-   input: {
-     width: '80%',
-     height: 50,
-     backgroundColor: '#D9D9D9',
-     borderRadius: 25,
-     paddingHorizontal: 20,
-     marginVertical: 10,
-    color: '#837B7B',
-    fontSize: 20,
-    fontWeight: 'bold',
-   },
    button: {
-     width: '70%',
-     height: 50,
+     width: '90%',
+     height: 60,
      backgroundColor: '#871F1F',
      borderRadius: 25,
      justifyContent: 'center',
      alignItems: 'center',
-     marginVertical: 10,
+     marginBottom: 45,
    },
   buttonText: {
     color: '#ffffff',
